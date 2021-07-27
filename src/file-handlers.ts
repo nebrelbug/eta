@@ -42,7 +42,7 @@ export function loadFile(
   noCache?: boolean
 ): TemplateFunction {
   const config = getConfig(options)
-  const template = readFile(filePath)
+  const template = options.readFile ? options.readFile(filePath) : readFile(filePath)
   try {
     const compiledTemplate = compile(template, config)
     if (!noCache) {

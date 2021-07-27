@@ -82,6 +82,9 @@ export interface EtaConfig {
   /** Directory or directories that contain templates */
   views?: string | Array<string>
 
+  /** Function to customize reading files by path */
+  readFile?: (path: string) => string
+
   [index: string]: any // eslint-disable-line @typescript-eslint/no-explicit-any
 }
 
